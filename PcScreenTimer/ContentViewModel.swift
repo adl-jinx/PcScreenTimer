@@ -49,7 +49,7 @@ extension ContentView2 {
             if diff <= 0 {
                 self.isActive = false
                 self.time = "0:00"
-                self.showingAlert = true
+                self.showingAlert = false
                 
                 
                 // Create a notification content
@@ -59,7 +59,7 @@ extension ContentView2 {
                        content.sound = UNNotificationSound.default
                        
                        // Create a notification trigger
-                       let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                       let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
                        
                        // Create a notification request with the content and trigger
                        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)

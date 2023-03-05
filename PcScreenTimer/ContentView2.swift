@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ContentView2: View {
     
@@ -52,6 +53,28 @@ struct ContentView2: View {
             HStack(spacing: 50){
                 Button("Start") {
                     vm.start(minutes: vm.minutes)
+                    
+                    // Create a notification content
+                           let content = UNMutableNotificationContent()
+                           content.title = "20 Minuti"
+                           content.body = "20 Secondi di pausa"
+                           content.sound = UNNotificationSound.default
+                           
+                           // Create a notification trigger
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(vm.minutes) * 60, repeats: false)
+                           
+                           // Create a notification request with the content and trigger
+                           let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                           
+                           // Add the notification request to the notification center
+                           UNUserNotificationCenter.current().add(request) { error in
+                               if let error = error {
+                                   print("Error adding notification request: \(error.localizedDescription)")
+                               } else {
+                                   print("Notification request added successfully.")
+                               }
+                           }
+                    
                     
                     
                 }
