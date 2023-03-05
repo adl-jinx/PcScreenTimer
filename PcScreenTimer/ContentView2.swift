@@ -19,7 +19,7 @@ struct ContentView2: View {
     var body: some View {
         VStack {
             
-            Button("Request Permission") {
+            Button("Richiesta Permesso Notifiche") {
                 UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                     if success {
                         print("All set!")
@@ -56,8 +56,8 @@ struct ContentView2: View {
                     
                     // Create a notification content
                            let content = UNMutableNotificationContent()
-                           content.title = "20 Minuti"
-                           content.body = "20 Secondi di pausa"
+                    content.title = "\(vm.minutes) Minuti"
+                           content.body = "Prenditi una pausa"
                            content.sound = UNNotificationSound.default
                            
                            // Create a notification trigger

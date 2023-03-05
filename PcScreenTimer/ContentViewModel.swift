@@ -51,7 +51,7 @@ extension ContentView2 {
                 self.time = "0:00"
                 self.showingAlert = false
                 
-                
+                /*
                 // Create a notification content
                        let content = UNMutableNotificationContent()
                        content.title = "20 Minuti"
@@ -71,8 +71,7 @@ extension ContentView2 {
                            } else {
                                print("Notification request added successfully.")
                            }
-                       }
-                
+                       } */
                     
                 return
             }
