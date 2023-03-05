@@ -11,10 +11,7 @@ import UserNotifications
 
 extension ContentView2 {
     final class ViewModel: ObservableObject {
-    
         
-        
-        let content = UNMutableNotificationContent()
         @Published var isActive = false
         @Published var showingAlert = false
         @Published var time: String = "5:00"
@@ -32,6 +29,7 @@ extension ContentView2 {
             self.endDate = Date()
             self.isActive = true
             self.endDate = Calendar.current.date(byAdding: .minute, value: Int(minutes), to: endDate)!
+            
         }
         
         func reset() {
@@ -46,22 +44,36 @@ extension ContentView2 {
             let now = Date()
             let diff = endDate.timeIntervalSince1970 - now.timeIntervalSince1970
             
+            
+            
             if diff <= 0 {
                 self.isActive = false
                 self.time = "0:00"
                 self.showingAlert = true
-                // Schedule a local notification
-                    let content = UNMutableNotificationContent()
-                    content.title = "Timer Done"
-                    content.body = "Your timer has completed"
-                    content.sound = UNNotificationSound.default
+                
+                
+                // Create a notification content
+                       let content = UNMutableNotificationContent()
+                       content.title = "20 Minuti"
+                       content.body = "20 Secondi di pausa"
+                       content.sound = UNNotificationSound.default
+                       
+                       // Create a notification trigger
+                       let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                       
+                       // Create a notification request with the content and trigger
+                       let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                       
+                       // Add the notification request to the notification center
+                       UNUserNotificationCenter.current().add(request) { error in
+                           if let error = error {
+                               print("Error adding notification request: \(error.localizedDescription)")
+                           } else {
+                               print("Notification request added successfully.")
+                           }
+                       }
+                
                     
-                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-                    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-                    
-                    UNUserNotificationCenter.current().add(request)
-                    
-
                 return
             }
             

@@ -43,7 +43,7 @@ struct ContentView2: View {
                     }
                 }
             
-            Slider(value: $vm.minutes, in: 0.5...20, step: 0.5)
+            Slider(value: $vm.minutes, in: 1...20, step: 1)
                 .padding()
                 .frame(width: width)
                 .disabled(vm.isActive)
