@@ -54,14 +54,14 @@ extension ContentView2 {
                     let content = UNMutableNotificationContent()
                     content.title = "Timer Done"
                     content.body = "Your timer has completed"
-                    content.sound = UNNotificationSound.defaul
-                
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: self.showingAlert, repeats: false)
+                    content.sound = UNNotificationSound.default
                     
-                
-                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                    
                     UNUserNotificationCenter.current().add(request)
                     
+
                 return
             }
             
