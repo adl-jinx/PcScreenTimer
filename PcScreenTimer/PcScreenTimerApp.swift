@@ -11,7 +11,7 @@ import SwiftUI
 struct PcScreenTimerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView2()
         }
     }
 }

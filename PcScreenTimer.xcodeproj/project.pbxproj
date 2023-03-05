@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8571CB7329B3B68200A03FDB /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8571CB7229B3B68200A03FDB /* ContentViewModel.swift */; };
+		8571CB7529B3BF5200A03FDB /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8571CB7429B3BF5200A03FDB /* ContentView2.swift */; };
 		85B00F0229B3A2D800395EEF /* PcScreenTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B00F0129B3A2D800395EEF /* PcScreenTimerApp.swift */; };
 		85B00F0429B3A2D800395EEF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B00F0329B3A2D800395EEF /* ContentView.swift */; };
 		85B00F0629B3A2D800395EEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B00F0529B3A2D800395EEF /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8571CB7229B3B68200A03FDB /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		8571CB7429B3BF5200A03FDB /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		85B00EFE29B3A2D800395EEF /* PcScreenTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PcScreenTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B00F0129B3A2D800395EEF /* PcScreenTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PcScreenTimerApp.swift; sourceTree = "<group>"; };
 		85B00F0329B3A2D800395EEF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				85B00F0129B3A2D800395EEF /* PcScreenTimerApp.swift */,
+				8571CB7229B3B68200A03FDB /* ContentViewModel.swift */,
 				85B00F0329B3A2D800395EEF /* ContentView.swift */,
+				8571CB7429B3BF5200A03FDB /* ContentView2.swift */,
 				85B00F0529B3A2D800395EEF /* Assets.xcassets */,
 				85B00F0729B3A2D800395EEF /* Preview Content */,
 			);
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				85B00F0429B3A2D800395EEF /* ContentView.swift in Sources */,
+				8571CB7529B3BF5200A03FDB /* ContentView2.swift in Sources */,
 				85B00F0229B3A2D800395EEF /* PcScreenTimerApp.swift in Sources */,
+				8571CB7329B3B68200A03FDB /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
